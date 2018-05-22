@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Register Below: </h2>
+<form action="/Registration/Success/" method="get">
+    First Name: <input type="text" name="firstname" /> <br />
+    Last Name: <input type="text" name="lastname" /><br />
+    Age: <input type="number" name="Age" /><br />
+    Email Address: <input type="text" name="email" /><br />
+    Phone Number: <input type="text" name="phone" /><br />
+    Would you like us to send our latest specials and coupons to your provided email address? : <br />
+    Yes: <input type="radio" name="Permission" value="Yes" /> 
+    No: <input type="radio" name="Permission" value="No" /><br />
+    <input type="submit" value="Register" class="btn btn-warning" />
+</form>
