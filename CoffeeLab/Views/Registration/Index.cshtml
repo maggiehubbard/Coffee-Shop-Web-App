@@ -1,17 +1,71 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Register";
 }
 
-<h2>Register Below: </h2>
+<style>
+    input {
+        margin: 15px;
+    }
+</style>
+<h2 class="h2">Register Below: </h2>
 <form action="/Registration/Success/" method="get">
     First Name: <input type="text" name="firstname" /> <br />
     Last Name: <input type="text" name="lastname" /><br />
+    Gender: Female:<input type="radio" name="gender" value="F" />
+    Male:<input type="radio" name="gender" value="M" /><br />
     Age: <input type="number" name="Age" /><br />
-    Email Address: <input type="text" name="email" /><br />
     Phone Number: <input type="text" name="phone" /><br />
-    Would you like us to send our latest specials and coupons to your provided email address? : <br />
-    Yes: <input type="radio" name="Permission" value="Yes" /> 
+    Email Address: <input type="text" name="email" id="email" /><br />
+    Password: <input type="password" name="password" id="p1" /><br />
+    Reenter Password: <input type="password" name="password" id="p2" /><br />
+    <span id="warning" class="text-danger"></span>
+    <br />Would you like us to send our latest specials and coupons to your provided email address? : <br />
+    Yes: <input type="radio" name="Permission" value="Yes" />
     No: <input type="radio" name="Permission" value="No" /><br />
-    <input type="submit" value="Register" class="btn btn-warning" />
+    <input type="submit" value="Register" class="btn btn-warning" onclick="return ValidateAllInputs()" />
 </form>
+<p>Returning user? <a href="/Registration/Login?">Log in here!</a></p>
+
+<script>
+
+    function MatchPassword() {
+        var p1 = (document.getElementById("p1"));
+        var p2 = document.getElementById("p2");
+        var warningText = document.getElementById("warning");
+
+        if (p1.value.length < 5) {
+            warningText.innerHTML = "<em>Password is too short. Please try again.</em>";
+            return false;
+        } else if (p1.value.length > 20) {
+            warningText.innerHTML = "Password is too long. Please try again.";
+            return false;
+        } else if (p1.value != p2.value) {
+            warningText.innerHTML = "Passwords do not match. Please try again.";
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function ValidateEmail() {
+        var email = document.getElementById("email").value;
+        var warningText = document.getElementById("warning");
+        if (email.match(/^\w+([\.-]?\w+)*@@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+        {
+            return true;
+        } else {
+            warningText.innerHTML = "<em>You entered an invalid email. Please try again.</em>";
+            return false;
+        }
+    }
+    function ValidateAllInputs() {
+        if (!ValidateEmail()) {
+            return false;
+        } else if (!MatchPassword()) {
+            return false;
+        } else {
+            return false;
+        }
+
+    }
+</script>
