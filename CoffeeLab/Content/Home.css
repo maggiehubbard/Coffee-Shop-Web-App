@@ -27,8 +27,7 @@ input {
     color: white;
     text-shadow: 1px 1px black;
       }
-    input:hover {
-        background-color: white;
+    input:hover {        
         color: black;
         text-shadow: none;
         box-shadow: 1px 1.5px grey;
@@ -40,4 +39,6 @@ h1 {
 img{
     margin-top: 0px;
     padding-top: 0px; 
-}
+}img:hover{
+     padding: 50px;
+ }

@@ -16,6 +16,15 @@ namespace CoffeeLab.Controllers
 
         public ActionResult Products()
         {
+            ViewBag.Message = "Products";
+            List<string> Images = new List<string>();
+            Images.Add("mug.jpg");
+            Images.Add("slippers.jpg");
+            Images.Add("stickerpack.jpg");
+            Images.Add("headband.jpg");
+            Images.Add("shirt.jpg");
+            Images.Add("purse.png");
+            ViewBag.Images = Images.ToList();
             CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();   //add items to list      
             ViewBag.Items = ORM.Items.ToList();
             return View();
