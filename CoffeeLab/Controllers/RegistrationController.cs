@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeLab.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,17 +15,26 @@ namespace CoffeeLab.Controllers
             return View();
         }
 
-        public ActionResult Success(string firstname, string lastname, int age, string gender, string phone, string email, string password, bool permission = false)
+        public ActionResult Success(User data)
         {
-            ViewBag.FirstName = firstname;
-            ViewBag.LastName = lastname;
-            ViewBag.Age = age;
-            ViewBag.Gender = gender;
-            ViewBag.Phone = phone;
-            ViewBag.Email = email;
-            ViewBag.Password = password;                        
-            ViewBag.Permission = permission; //radio button - permission to email special offers
+            CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ORM.Users.Add(data);
+                    ORM.SaveChanges();
+                    ViewBag.Message = $"Welcome {data.FirstName}! Your acccount was created successfully";
+                }
+                catch (Exception e)
+                {
 
+                    ViewBag.Message = $"Error: {e.Message} occured. Please try creating an account later";
+
+                    //$"{data.Email} was not a valid customer";
+                }
+
+            }
             return View();
         }
         public ActionResult Login(string username, string password)

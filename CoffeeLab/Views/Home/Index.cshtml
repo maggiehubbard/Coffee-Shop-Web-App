@@ -2,9 +2,14 @@
     ViewBag.Title = "Home";
 }
 
+<link rel="stylesheet" href="~/Content/Home.css" />
 
+<div class="back">
+    <h1>Mythical Matters Unicorn Shop</h1>
+    <ul id="buttons">
+        <li><form action="/Registration/Index" method="get"> <input type="submit" value="Register" id="pinkbtn" /></form></li>
+        <li><form action="/Registration/Login" method="get"> <input type="submit" value="Login" id="pinkbtn" /></form></li>
+    </ul>
+       <img src="~/Content/favicon.ico" id="sassy" width="300px" />
 
-<div class="jumbotron">
-    <h1>Welcome to GC Coffee Shop!</h1>
-    <form action="/Registration/Index" method="get"> <input type="submit" value="Register" class="btn btn-warning" /></form>
-    <form action="/Registration/Login" method="get"> <input type="submit" value="Login" class="btn" /></form>
+    </div>

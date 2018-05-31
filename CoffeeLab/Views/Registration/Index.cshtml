@@ -3,32 +3,34 @@
     ViewBag.Title = "Register";
 }
 
-<style>
-    input {
-        margin: 15px;
-    }
-</style>
+<link rel="stylesheet" href="~/Content/Register.css" />
+
 <h2 class="h2">Register Below: </h2>
 <form action="/Registration/Success/" method="get">
-    First Name: <input type="text" name="firstname" /> <br />
-    Last Name: <input type="text" name="lastname" /><br />
-    Gender: Female:<input type="radio" name="gender" value="F" />
-    Male:<input type="radio" name="gender" value="M" /><br />
-    Age: <input type="number" name="Age" /><br />
-    Phone Number: <input type="text" name="phone" /><br />
-    Email Address: <input type="text" name="email" id="email" /><br />
-    Password: <input type="password" name="password" id="p1" /><br />
-    Reenter Password: <input type="password" name="password" id="p2" /><br />
+    <p>First Name: <p /> <input type="text" name="firstname" /> <br />
+    <p>Last Name: <p /><input type="text" name="lastname" /><br />
+    <p>Gender:<p />
+    <select>
+        <option value="gender">Female</option>
+        <option value="gender">Male</option>
+    </select><br />
+    <p> Age: <p /><input type="number" name="Age" id="age" /><br />
+    <span id="agewarn" class="text-danger"></span>
+    <p>Phone Number:<p /> <input type="text" name="phone" id="phone" /><br />
+    <span id="phonewarn" class="text-danger"></span>
+    <p>Email Address: <p /><input type="text" name="email" id="email" /><br />
+    <p>Password: <p /><input type="password" name="password" id="p1" /><br />
+    <p>Reenter Password: <p /><input type="password" name="password" id="p2" /><br />
     <span id="warning" class="text-danger"></span>
     <br />Would you like us to send our latest specials and coupons to your provided email address? : <br />
-    Yes: <input type="radio" name="Permission" value="Yes" />
-    No: <input type="radio" name="Permission" value="No" /><br />
-    <input type="submit" value="Register" class="btn btn-warning" onclick="return ValidateAllInputs()" />
+    <p>Yes: <input type="radio" name="Permission" value="Yes" /></p>
+    <p>No: <input type="radio" name="Permission" value="No" id="nope"/><br /></p>
+    <br /><input type="submit" value="Register" onclick="return ValidateAllInputs()" />
 </form>
 <p>Returning user? <a href="/Registration/Login?">Log in here!</a></p>
 
 <script>
-
+    
     function MatchPassword() {
         var p1 = (document.getElementById("p1"));
         var p2 = document.getElementById("p2");
@@ -58,10 +60,39 @@
             return false;
         }
     }
+    function ValidateAge() {
+        var warning = document.getElementById("agewarn");
+        var age = document.getElementById("age").value;
+        if (age <= 99 && age >= 13) {
+            return true;
+        } else if (age < 0 || age > 99) {
+            warning.innerHTML = "<em>Please enter a valid age </em>"
+            return false;
+        } else if (age <= 12){            
+            warning.innerHTML = "<em>You must be 13 years or older to create an account</em>"
+            return false;
+        }
+    }
+
+    function ValidatePhone() {
+        var phone = document.getElementById("phone").value;
+        var phonewarn = document.getElementById("phonewarn");
+        if (phone.match(/^(\(\d{3}\)|\d{3})-?\d{3}-?\d{4}$/)) {
+            return true;
+        } else {
+            phonewarn.innerHTML = "<em>You entered an invalid phone number. Please try again.</em>";
+            return false;
+        }
+        
+    }
     function ValidateAllInputs() {
         if (!ValidateEmail()) {
             return false;
         } else if (!MatchPassword()) {
+            return false;
+        } else if (!ValidateAge()) {
+            return false;
+        } else if (!ValidatePhone()) {
             return false;
         } else {
             return true;

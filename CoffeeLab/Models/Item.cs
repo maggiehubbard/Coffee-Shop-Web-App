@@ -12,14 +12,12 @@ namespace CoffeeLab.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Item
     {
-        public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> Age { get; set; }
-        public string Gender { get; set; }
-        public int UserID { get; set; }
+        public int ItemKey { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Price { get; set; }
     }
 }

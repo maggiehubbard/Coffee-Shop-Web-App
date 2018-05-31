@@ -89,3 +89,7 @@ c:\users\maggie\source\repos\CoffeeLab\CoffeeLab\obj\Debug\CoffeeLab.csproj.Core
 c:\users\maggie\source\repos\CoffeeLab\CoffeeLab\obj\Debug\CoffeeLab.csproj.CopyComplete
 c:\users\maggie\source\repos\CoffeeLab\CoffeeLab\obj\Debug\CoffeeLab.dll
 c:\users\maggie\source\repos\CoffeeLab\CoffeeLab\obj\Debug\CoffeeLab.pdb
+C:\Users\Maggie\source\repos\CoffeeLab\CoffeeLab\bin\EntityFramework.dll
+C:\Users\Maggie\source\repos\CoffeeLab\CoffeeLab\bin\EntityFramework.SqlServer.dll
+C:\Users\Maggie\source\repos\CoffeeLab\CoffeeLab\bin\EntityFramework.xml
+C:\Users\Maggie\source\repos\CoffeeLab\CoffeeLab\bin\EntityFramework.SqlServer.xml

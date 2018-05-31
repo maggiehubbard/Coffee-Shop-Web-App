@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeLab.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,10 +14,10 @@ namespace CoffeeLab.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Products()
         {
-            ViewBag.Message = "Your application description page.";
-
+            CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();   //add items to list      
+            ViewBag.Items = ORM.Items.ToList();
             return View();
         }
 
@@ -26,6 +27,7 @@ namespace CoffeeLab.Controllers
 
             return View();
         }
+
         
     }
 }

@@ -1,0 +1,19 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+input {
+    width: 250px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+p{
+    margin-right: 15px;
+}
+

@@ -1,0 +1,43 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+#buttons li{
+   list-style: none;
+   display: inline-block;
+   margin: 15px 30px;   
+}
+h1{
+    color: pink;
+    text-shadow: 1px 1px black;
+}
+input {
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+    background-color: pink;
+    width: 150px;
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 1px 1.5px black;
+    color: white;
+    text-shadow: 1px 1px black;
+      }
+    input:hover {
+        background-color: white;
+        color: black;
+        text-shadow: none;
+        box-shadow: 1px 1.5px grey;
+        border: 1px solid pink;
+    }
+h1 {
+    font-family: 'Lobster', cursive;
+}
+img{
+    margin-top: 0px;
+    padding-top: 0px; 
+}
