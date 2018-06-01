@@ -6,16 +6,18 @@ body {
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
-#buttons li{
-   list-style: none;
-   display: inline-block;
-   margin: 15px 30px;   
+#buttons li {
+    list-style: none;
+    display: inline-block;
+    margin: 15px 30px;
 }
-h1{
+
+h1 {
     color: pink;
     text-shadow: 1px 1px black;
 }
-input {
+
+#buttons input {
     font-size: 25px;
     font-family: 'Quicksand', sans-serif;
     background-color: pink;
@@ -26,19 +28,36 @@ input {
     box-shadow: 1px 1.5px black;
     color: white;
     text-shadow: 1px 1px black;
-      }
-    input:hover {        
-        color: black;
-        text-shadow: none;
-        box-shadow: 1px 1.5px grey;
-        border: 1px solid pink;
-    }
+}
+#pinkbtn:hover {
+    color: black;
+    text-shadow: none;
+}
+table{
+    border-radius: 35%;
+}
+.navbar-inverse {
+    background: linear-gradient(white, pink);
+    color: white;
+    box-shadow: 1px 1px pink;
+    border: none;
+}
+
+
+
+
 h1 {
     font-family: 'Lobster', cursive;
 }
-img{
+
+img {
     margin-top: 0px;
-    padding-top: 0px; 
-}img:hover{
-     padding: 50px;
- }
+    padding-top: 0px;
+}
+#social img:hover {
+    background-color: white;
+    transform: scale(.5);
+    cursor: pointer;
+}
+
+   

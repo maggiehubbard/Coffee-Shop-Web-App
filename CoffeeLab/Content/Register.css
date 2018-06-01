@@ -4,8 +4,9 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-h2 {
+h1 {
     font-family: 'Quicksand', sans-serif;
+    text-align:center;
 }
 
 input {
@@ -16,4 +17,9 @@ input {
 p{
     margin-right: 15px;
 }
-
+.navbar-inverse {
+    background: linear-gradient(white, pink);
+    color: white;
+    box-shadow: 1px 1px pink;
+    border: none;
+}

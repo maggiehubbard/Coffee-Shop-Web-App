@@ -6,7 +6,8 @@
     <title>@ViewBag.Title - Mythical Matters</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+    <link rel="stylesheet" href="~/Content/Register.css" />
+
 
 </head>
 <body>
@@ -24,7 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Products", "Products", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Admin Login", "AdminLogin", "Admin")</li> <!---Change for lab 24-->
                 </ul>
             </div>
         </div>
@@ -33,7 +34,15 @@
         @RenderBody()
         <hr />
         <footer>
+            <p>Connect with us on social media!</p>
+            <img src="~/Content/yt.png" id="social" width="75" />
+            <img src="~/Content/pinterest.png" id=AA"social" width="75" />
+            <img src="~/Content/fb.png" id="social" width="75" />
+            <img src="~/Content/twitter.png" id="social" width="75" />
+            <br />
+            <br />
             <p>&copy; @DateTime.Now.Year - Mythical Matters</p>
+
         </footer>
     </div>
 

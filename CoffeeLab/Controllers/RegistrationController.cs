@@ -1,4 +1,5 @@
-﻿using CoffeeLab.Models;
+﻿using CoffeeLab.DAO;
+using CoffeeLab.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +18,12 @@ namespace CoffeeLab.Controllers
 
         public ActionResult Success(User data)
         {
-            CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();
+            
             if (ModelState.IsValid)
             {
                 try
                 {
-                    ORM.Users.Add(data);
-                    ORM.SaveChanges();
+                    UserDAO.AddUser(data);
                     ViewBag.Message = $"Welcome {data.FirstName}! Your acccount was created successfully";
                 }
                 catch (Exception e)

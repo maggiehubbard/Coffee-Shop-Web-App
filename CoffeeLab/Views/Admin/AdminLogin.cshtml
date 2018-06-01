@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Admin Login</h2>
+
+<p> Please enter your login creditials below: </p>
+<form action="/Admin/Index/" method="get">
+    <p>User Name: </p><input type="text" name="username" id="username" /> <br />
+    <span id="unspan" class="btn-warning"></span>
+    <p>Password: </p><input type="password" name="password" id="password" /> <br />
+    <span id="pwspan" class="btn-warning"></span><br />
+    <input type="submit" value="Log In"  onclick="return checkAll()" />
+    
+</form>
+
+    <br /><p> Got here by mistake? <a href="/Registration/Login/"> Customer log in here! </a></p>
+
+    <script>
+        function checkPW() {
+            var password = document.getElementById("password").value;
+            var pwspan = document.getElementById("pwspan");
+            if (password == "ABC123") {
+                return true;
+            } else {
+                pwspan.innerHTML = "Error: Password was incorrect";
+                return false;
+            }
+        }
+        function checkUN() {
+            var username = document.getElementById("username").value;
+            var unspan = document.getElementById("unspan");
+            if (username == "admin") {
+                return true;
+            } else {
+                
+                pwspan.innerHTML = "Error: Username was incorrect";
+                return false;
+            }
+        }
+
+        function checkAll() {
+            if (!checkUN()) {
+                return false;
+            } else if (!checkPW()) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function temp() {
+            return console.log("working!");
+        }
+    </script>
+
+
